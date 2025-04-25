@@ -1,5 +1,5 @@
 ---
-description: This article shows how to collection information about computer configuration use WMI and CIM cmdlets.
+description: This article shows how to collect information about computer configurations using WMI and CIM cmdlets.
 ms.date: 12/08/2022
 title: Collecting information about computers
 ---
@@ -129,7 +129,7 @@ CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
 ...
 ```
 
-The additional data is returned, because the **Property** parameter in `Get-CimInstance` restricts
+The additional data is returned because the **Property** parameter in `Get-CimInstance` restricts
 the properties returned from WMI class instances, not the object returned to PowerShell. To reduce
 the output, use `Select-Object`:
 
@@ -260,10 +260,10 @@ PSComputerName :
 
 ## Displaying service status
 
-To view the status of all services on a specific computer, you can locally use the `Get-Service`
-cmdlet. For remote systems, you can use the **Win32_Service** WMI class. If you also use
+To view the status of all services on a specific computer, you can use the `Get-Service`
+cmdlet locally. For remote systems, you can use the **Win32_Service** WMI class. If you also use
 `Select-Object` to filter the results to **Status**, **Name**, and **DisplayName**, the output
-format is almost identical to that from `Get-Service`:
+format is almost identical to that of `Get-Service`:
 
 ```powershell
 Get-CimInstance -ClassName Win32_Service |
